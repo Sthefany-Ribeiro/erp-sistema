@@ -1,0 +1,25 @@
+# Dependências
+node_modules/
+
+# Variáveis de ambiente e segredos
+.env
+.env.local
+
+# Banco de dados local (gerado em runtime — não versionar dados)
+db/*.db
+db/*.db-journal
+*.sqlite
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operacional / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build
+dist/
+build/
