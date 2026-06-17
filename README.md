@@ -59,7 +59,7 @@ Acesse `http://localhost:3000`. Login de demonstração: `admin@empresa.com` / `
 - [ ] Módulo de Vendas (transação completa)
 - [ ] Módulo Financeiro (contas a receber/pagar)
 - [ ] Dashboard com KPIs
-- [ ] Frontend integrado (Figma → HTML/CSS/JS)
+- [ ] Frontend integrado (HTML/CSS/JS)
 - [ ] Migração para PostgreSQL + Docker Compose
 
 ## Licença
