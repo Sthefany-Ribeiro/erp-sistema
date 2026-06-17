@@ -6,8 +6,8 @@ node_modules/
 .env.local
 
 # Banco de dados local (gerado em runtime — não versionar dados)
-db/*.db
-db/*.db-journal
+*.db
+*.db-journal
 *.sqlite
 
 # Logs

@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('../db/database');
+const { apenasAdmin } = require('../middleware/auth');
 
 const router = express.Router();
 
@@ -129,7 +130,7 @@ router.post('/', (req, res) => {
   }
 });
 
-router.put('/:id/cancelar', (req, res) => {
+router.put('/:id/cancelar', apenasAdmin, (req, res) => {
   const venda = db.prepare('SELECT * FROM vendas WHERE id = ?').get(req.params.id);
   if (!venda) return res.status(404).json({ erro: 'Venda não encontrada.' });
   if (venda.status === 'cancelada') return res.status(409).json({ erro: 'Esta venda já está cancelada.' });

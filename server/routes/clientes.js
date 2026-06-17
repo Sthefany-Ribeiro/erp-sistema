@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('../db/database');
+const { apenasAdmin } = require('../middleware/auth');
 
 const router = express.Router();
 
@@ -69,7 +70,7 @@ router.put('/:id', (req, res) => {
   res.json(cliente);
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', apenasAdmin, (req, res) => {
   const emUso = db.prepare('SELECT COUNT(*) c FROM vendas WHERE cliente_id = ?').get(req.params.id);
   if (emUso.c > 0) {
     return res.status(409).json({ erro: 'Este cliente possui vendas vinculadas e não pode ser excluído. Marque como inativo.' });

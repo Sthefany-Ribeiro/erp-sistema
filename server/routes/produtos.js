@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('../db/database');
+const { apenasAdmin } = require('../middleware/auth');
 
 const router = express.Router();
 
@@ -121,7 +122,7 @@ router.post('/:id/movimentacao', (req, res) => {
   res.json(atualizado);
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', apenasAdmin, (req, res) => {
   const emUso = db.prepare('SELECT COUNT(*) c FROM venda_itens WHERE produto_id = ?').get(req.params.id);
   if (emUso.c > 0) {
     return res.status(409).json({ erro: 'Este produto possui vendas vinculadas e não pode ser excluído.' });
