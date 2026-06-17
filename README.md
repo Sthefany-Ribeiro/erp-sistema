@@ -19,7 +19,7 @@ Projeto de portfólio, em desenvolvimento.
 - **Backend:** Node.js + Express
 - **Banco de dados:** SQLite (`node:sqlite`)
 - **Autenticação:** JWT + bcrypt
-- **Frontend:** HTML/CSS/JS, design feito no Figma
+- **Frontend:** HTML/CSS/JS
 
 ## Como rodar localmente
 
